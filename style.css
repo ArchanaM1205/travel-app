@@ -1,0 +1,413 @@
+html, body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    z-index: 2000;
+    transition: 3s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.logo img {
+    height: 80px;
+    max-width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+}
+
+nav a:hover {
+    background: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.landing {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('back.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.quote {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+    font-family: 'Merriweather', serif;
+    margin-bottom: 20px;
+}
+
+.explore {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+.overview-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url('describe.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.overview-section h2 {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.overview-text {
+    font-size: 22px;
+    color: white;
+    max-width: 800px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    min-height: 200px;
+}
+
+.places-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.places-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.places-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.place {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    gap: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.place img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.place:hover img {
+    transform: scale(1.1);
+}
+
+.place .description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.place:hover .description {
+    opacity: 1;
+}
+
+.place:hover {
+    box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.7); /* Glowing effect */
+}
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+}
+
+/* Bus Section */
+.bus-section {
+    padding: 50px;
+    text-align: center;
+    background: #222;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.bus-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ff5733;
+}
+
+.bus-gallery {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    border: 2px solid white;
+    scroll-snap-type: x mandatory;
+}
+
+.bus-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.bus-gallery img:hover {
+    transform: scale(1.1);
+}
+
+.bus-item:hover {
+    box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.8);
+}
+
+.bus-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.bus-gallery {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Next Button */
+.next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #ff3d00;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .quote {
+        font-size: 40px;
+    }
+    .explore {
+        font-size: 24px;
+    }
+    .overview-section h2 {
+        font-size: 40px;
+    }
+    .overview-text {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+    .landing {
+        height: 80vh;
+    }
+    .quote {
+        font-size: 32px;
+    }
+    .explore {
+        font-size: 20px;
+    }
+    .overview-section {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 70px;
+    }
+    nav a {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+    .quote {
+        font-size: 24px;
+    }
+    .explore {
+        font-size: 18px;
+    }
+    .overview-section h2 {
+        font-size: 28px;
+    }
+    .overview-text {
+        font-size: 18px;
+    }
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Styles for Places Section */
+@media screen and (max-width: 1024px) {
+    .places-container {
+        flex-direction: column; /* Stack places vertically */
+        align-items: center;
+    }
+    .place {
+        width: 90%; /* Adjust place width */
+        height: auto; /* Allow dynamic height */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .places-container {
+        flex-direction: column; /* Stack places vertically */
+        align-items: center;
+    }
+    .place {
+        width: 80%; /* Adjust place width for smaller screens */
+        height: auto; /* Allow dynamic height */
+    }
+}
+
+/* Responsive Styles for Bus Section */
+@media screen and (max-width: 1024px) {
+    .bus-gallery {
+        flex-direction: column; /* Stack bus images vertically on smaller screens */
+        gap: 15px;
+    }
+    .bus-gallery img {
+        width: 80%; /* Adjust bus image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bus-gallery {
+        flex-direction: column; /* Stack bus images vertically */
+        gap: 15px;
+        padding: 20px; /* Add padding for better spacing */
+    }
+    .bus-gallery img {
+        width: 90%; /* Further adjust image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .places-container {
+        flex-direction: column; /* Stack places vertically */
+        align-items: center;
+    }
+    .place {
+        width: 95%; /* Adjust place width for small screens */
+        height: auto; /* Allow dynamic height */
+    }
+    .bus-gallery img {
+        width: 100%; /* Full-width images on very small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
