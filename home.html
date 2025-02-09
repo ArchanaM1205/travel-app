@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jet Vibe Holidays</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -46,17 +47,21 @@
             </div>
         </div>
     </div>
-
     <div class="bus-section">
         <h2>Our Luxury Travel Buses</h2>
         <div class="bus-gallery" id="busGallery">
-            <img src="bus1.jpg" alt="Bus 1">
-            <img src="bus2.jpg" alt="Bus 2">
-            <img src="bus3.jpg" alt="Bus 3">
+            <img src="Bus/bus1.jpg" alt="Bus 1" class="active">
+            <img src="Bus/bus2.jpg" alt="Bus 2">
+            <img src="Bus/bus3.jpg" alt="Bus 3">
+            <img src="Bus/bus4.jpg" alt="Bus 4">
+            <img src="Bus/bus5.jpg" alt="Bus 5">
+            <img src="Bus/bus6.jpg" alt="Bus 6">
+            <img src="Bus/bus7.jpg" alt="Bus 7">
+            <img src="Bus/bus8.jpg" alt="Bus 8">
+
         </div>
-        <!-- Next Button -->
-        <button id="nextButton" class="next-button">Next</button>
     </div>
+
 
     <div class="overview-section">
         <h2>About Jet Vibe Holidays</h2>
@@ -94,13 +99,18 @@
         
         typeText();
 
-        // Next Button Functionality
-        const busGallery = document.getElementById("busGallery");
-        const nextButton = document.getElementById("nextButton");
 
-        nextButton.addEventListener("click", function () {
-            busGallery.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll 300px to the right
-        });
-    </script>
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll(".bus-gallery img");
+        const totalImages = images.length;
+
+        function scrollBuses() {
+            images[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add("active");
+        }
+
+        setInterval(scrollBuses, 3000);</script>
 </body>
 </html>
