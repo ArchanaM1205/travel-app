@@ -67,6 +67,14 @@
         <h2>About Jet Vibe Holidays</h2>
         <div class="overview-text" id="typed-text"></div>
     </div>
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <p><b>Phone:</b> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            <p><b>Instagram:</b> <a href="https://www.instagram.com/jetvibeholidays" target="_blank">@jetvibeholidays</a></p>
+            <button class="call-button" onclick="callNow()">Call Now</button>
+        </div>
+    </div>
 
     <footer>
         &copy; 2025 Jet Vibe Holidays | Designed for elite travelers
@@ -74,6 +82,9 @@
 
     <!-- JavaScript for Loading Screen, Typing Animation, and Next Button -->
     <script>
+         function callNow() {
+            window.location.href = "tel:+919876543210";
+        }
         // Loading Screen Animation
         window.addEventListener("load", function () {
             const loader = document.getElementById("loading-screen");
@@ -112,5 +123,5 @@
         }
 
         setInterval(scrollBuses, 3000);</script>
-</body>
+       
 </html>

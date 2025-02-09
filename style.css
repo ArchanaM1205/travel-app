@@ -106,7 +106,6 @@ nav a {
 .overview-section {
     width: 100%;
     height: 100vh;
-    background-image: url('describe.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -115,21 +114,23 @@ nav a {
     text-align: center;
     flex-direction: column;
     padding: 50px;
+    background: linear-gradient(to right, #000428, black);
 }
 
 .overview-section h2 {
-    font-size: 50px;
+    font-size: 25px;
     font-weight: bold;
     color: white;
     font-family: 'Merriweather', serif;
     margin-bottom: 20px;
     background: rgba(0, 0, 0, 0.6);
-    padding: 10px;
+    padding: 6px;
     border-radius: 10px;
+    
 }
 
 .overview-text {
-    font-size: 22px;
+    font-size: 19px;
     color: white;
     max-width: 800px;
     font-family: 'Playfair Display', serif;
@@ -139,6 +140,7 @@ nav a {
     border-radius: 10px;
     text-align: left;
     min-height: 200px;
+
 }
 
 .places-section {
@@ -250,6 +252,33 @@ footer {
     text-align: center;
     font-family:'Times New Roman', Times, serif;
     font-size: 60px;
+}
+.contact-section {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #004e92, #000428);
+    color: white;
+}
+.contact-section a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contact-section a:hover {
+    text-decoration: underline;
+}
+.call-button {
+    background-color: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.call-button:hover {
+    background-color: #ffcc00;
 }
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
